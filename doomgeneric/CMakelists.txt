@@ -1,0 +1,17 @@
+file(GLOB DOOM_SOURCES *.c)
+
+list(REMOVE_ITEM DOOM_SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/doomgeneric_allegro.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/doomgeneric_emscripten.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/doomgeneric_linuxvt.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/doomgeneric_sdl.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/doomgeneric_soso.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/doomgeneric_sosox.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/doomgeneric_win.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/doomgeneric_xlib.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/i_allegromusic.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/i_allegrosound.c
+)
+
+add_library(doom STATIC ${DOOM_SOURCES})
+target_include_directories(doom PUBLIC .)
