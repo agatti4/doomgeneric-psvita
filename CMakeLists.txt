@@ -13,11 +13,6 @@ include("${VITASDK}/share/vita.cmake" REQUIRED)
 
 find_package(SDL2 REQUIRED)
 find_package(SDL2_mixer REQUIRED)
-# find_package(libxmp REQUIRED)
-# find_package(libmodplug REQUIRED)
-# find_package(libogg REQUIRED)
-# find_package(libopus REQUIRED)
-# find_package(Vorbis REQUIRED)
 
 set(VITA_APP_NAME "Doomgeneric")
 set(VITA_TITLEID  "DOOMGEN17")
