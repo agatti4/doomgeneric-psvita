@@ -12,6 +12,12 @@ project(doomvita)
 include("${VITASDK}/share/vita.cmake" REQUIRED)
 
 find_package(SDL2 REQUIRED)
+find_package(SDL2_mixer REQUIRED)
+# find_package(libxmp REQUIRED)
+# find_package(libmodplug REQUIRED)
+# find_package(libogg REQUIRED)
+# find_package(libopus REQUIRED)
+# find_package(Vorbis REQUIRED)
 
 set(VITA_APP_NAME "Doomgeneric")
 set(VITA_TITLEID  "DOOMGEN17")
@@ -31,8 +37,17 @@ add_executable(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
-  doom
-  SDL2::SDL2
+  doom          # your own game code
+  SDL2_mixer    # mixer, depends on SDL2 + optional codecs
+  SDL2::SDL2    # core SDL2
+  xmp           # modplug may call xmp functions
+  modplug       # module playback
+  opusfile
+  opus
+  vorbisfile
+  vorbis
+  ogg
+  stdc++        # C++ standard library last
 )
 
 vita_create_self(${PROJECT_NAME}.self ${PROJECT_NAME})

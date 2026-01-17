@@ -15,3 +15,5 @@ list(REMOVE_ITEM DOOM_SOURCES
 
 add_library(doom STATIC ${DOOM_SOURCES})
 target_include_directories(doom PUBLIC .)
+target_compile_definitions(doom PRIVATE FEATURE_SOUND)
+target_compile_definitions(doom PRIVATE NO_STRETCH)

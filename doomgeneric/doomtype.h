@@ -68,6 +68,18 @@
 
 typedef bool boolean;
 
+#elif __vita__
+
+typedef int boolean;
+
+#ifndef true
+#define true 1
+#endif
+
+#ifndef false
+#define false 0
+#endif
+
 #else
 
 typedef enum 
